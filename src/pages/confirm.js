@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import backend from "../helper/backend.js"
 import Layout from "../components/layout.js"
 import Seo from "../components/seo.js"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import PhoneInput from "react-phone-number-input"
 
 export default () => {
@@ -18,6 +18,7 @@ export default () => {
       }
       let data = await backend.confirmPhone(code)
       alert(data)
+      navigate("/device-police")
     } catch (err) {
       console.log(err)
       alert(err.response.data.message)
