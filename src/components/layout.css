@@ -620,3 +620,46 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.header {
+  background-color: blue;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form * {
+  margin: 10px 0;
+  width: 20vw;
+}
+.form input {
+  outline: 0;
+  border: 0;
+  padding: 5px;
+  background: #f7f7f7;
+}
+button,
+input[type="submit"] {
+  outline: 0;
+  border: 0;
+  padding: 5px;
+  border-radius: 3px;
+  background: blue;
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.navigation a {
+  color: white;
+  margin-right: 20px;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+}
