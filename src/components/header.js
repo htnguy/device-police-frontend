@@ -37,6 +37,7 @@ const Header = ({ siteTitle }) => {
         </h1>
         <div className="navigation">
           <Link to="/device-police">Get Started</Link>
+          {!jwt ? <Link to="/auth">Create Account</Link> : ""}
           <Link to="/dashboard">Dashboard</Link>
           {jwt ? (
             <a

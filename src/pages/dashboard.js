@@ -42,10 +42,10 @@ export default () => {
   const { hours, minutes, seconds } = formState
   return (
     <Layout>
-      <Seo title="dashboar" />
+      <Seo title="dashboard" />
       {!jwt ? (
         <div>
-          <Link to="/device-police">Create an Account or Login</Link>
+          <Link to="/auth">Create an Account or Login</Link>
         </div>
       ) : (
         <div>

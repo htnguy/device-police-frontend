@@ -18,7 +18,7 @@ export default () => {
       }
       let data = await backend.confirmPhone(code)
       alert(data)
-      navigate("/device-police")
+      navigate("/auth")
     } catch (err) {
       console.log(err)
       alert(err.response.data.message)
@@ -74,7 +74,7 @@ export default () => {
         </a>
       </div>
 
-      <Link to="/device-police">Create an Account or Login</Link>
+      <Link to="/auth">Create an Account or Login</Link>
     </Layout>
   )
 }
