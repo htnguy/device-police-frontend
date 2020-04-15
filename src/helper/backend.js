@@ -39,6 +39,11 @@ async function signin(info) {
 }
 
 async function setTimer(info) {
+  if (!localStorage.jwt) {
+    if (typeof document !== "undefined") {
+      document.location.href = "/"
+    }
+  }
   const { userId } = jwtDecode(localStorage.jwt)
   setTokenHeader(localStorage.jwt)
   const { data } = await axios.post(`${API_URL}/timer/${userId}`, info)
@@ -46,9 +51,28 @@ async function setTimer(info) {
 }
 
 async function resetTimer() {
+  if (!localStorage.jwt) {
+    if (typeof document !== "undefined") {
+      document.location.href = "/"
+    }
+  }
   const { userId } = jwtDecode(localStorage.jwt)
   setTokenHeader(localStorage.jwt)
   const { data } = await axios.post(`${API_URL}/timer/${userId}/reset`)
+  return data
+}
+
+async function deleteUser(password) {
+  if (!localStorage.jwt) {
+    if (typeof document !== "undefined") {
+      document.location.href = "/"
+    }
+  }
+  const { userId } = jwtDecode(localStorage.jwt)
+  setTokenHeader(localStorage.jwt)
+  const { data } = await axios.delete(`${API_URL}/user/${userId}/delete`, {
+    params: { password },
+  })
   return data
 }
 
@@ -60,4 +84,5 @@ export default {
   signin,
   setTimer,
   resetTimer,
+  deleteUser,
 }

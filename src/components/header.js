@@ -40,14 +40,17 @@ const Header = ({ siteTitle }) => {
           {!jwt ? <Link to="/auth">Create Account</Link> : ""}
           <Link to="/dashboard">Dashboard</Link>
           {jwt ? (
-            <a
-              onClick={() => {
-                clearLocalStorage()
-                navigate("/")
-              }}
-            >
-              Logout
-            </a>
+            <span>
+              <a
+                onClick={() => {
+                  clearLocalStorage()
+                  navigate("/")
+                }}
+              >
+                Logout
+              </a>
+              <Link to="/account">Manage Account</Link>
+            </span>
           ) : (
             ""
           )}
